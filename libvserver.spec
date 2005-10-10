@@ -8,6 +8,7 @@ Group:		Applications/System
 Source0:	http://dev.gentoo.org/~hollow/vserver/libvserver/%{name}-%{version}.tar.bz2
 # Source0-md5:	61cb0a655e40116e1b4eba917018cdce
 URL:		http://dev.gentoo.org/~hollow/vserver/libvserver/
+Conflicts:	util-vserver
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
