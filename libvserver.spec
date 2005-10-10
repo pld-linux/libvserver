@@ -1,4 +1,5 @@
 Summary:	Linux-VServer syscall library
+Summary(pl):	Biblioteka wywo³añ systemowych Linux-VServer
 Name:		libvserver
 Version:	0.2.1
 Release:	0.1
@@ -18,6 +19,16 @@ of the syscall commands in user space. High-level programs such as the
 "vserver" command of util-vserver can use these tools to access the
 VServer API.
 
+%description -l pl
+Pakiet zawiera czyst± implementacjê API Linux-VServera przy u¿yciu
+biblioteki, która obs³uguje wszystkie wywo³ania systemowe vservera
+oraz dostarcza interfejs dla innych aplikacji takich jak narzêdzia
+dostarczane z libvserver. Katalog narzêdzi zawiera najprostsz±
+implementacjê poleceñ obs³ugi wywo³añ systemowych w przestrzeni
+u¿ytkownika. Wysokopoziomowe programy, takie jak polecenie "vserver"
+z pakietu util-vserver, mog± u¿ywaæ tych narzêdzi do dostêpu do API
+VServera.
+
 %package devel
 Summary:	Development libraries and header files for libvserver library
 Group:		Development/Libraries
@@ -28,13 +39,21 @@ Requires:	linux-libc-headers
 This is the package containing the development libraries and header
 files for libvserver.
 
+%description devel -l pl
+Ten pakiet zawiera biblioteki deweloperskie i pliki nag³ówkowe dla
+libvserver.
+
 %package static
 Summary:	Static libvserver library
+Summary(pl):	Biblioteka statyczna libvserver
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libvserver library.
+
+%description static -l pl
+Biblioteka statyczna libvserver.
 
 %prep
 %setup -q
