@@ -7,7 +7,7 @@ License:	GPL v2
 Group:		Applications/System
 Source0:	http://dev.gentoo.org/~hollow/vserver/libvserver/%{name}-%{version}.tar.bz2
 # Source0-md5:	61cb0a655e40116e1b4eba917018cdce
-URL:		http://dev.gentoo.org/~hollow/vserver/libvserver
+URL:		http://dev.gentoo.org/~hollow/vserver/libvserver/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,18 +30,17 @@ z pakietu util-vserver, mog± u¿ywaæ tych narzêdzi do dostêpu do API
 VServera.
 
 %package devel
-Summary:	Development libraries and header files for libvserver library
+Summary:	Header files for libvserver library
+Summary(pl):	Pliki nag³ówkowe biblioteki libvserver
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	linux-libc-headers
 
 %description devel
-This is the package containing the development libraries and header
-files for libvserver.
+This is the package containing the header files for libvserver.
 
 %description devel -l pl
-Ten pakiet zawiera biblioteki deweloperskie i pliki nag³ówkowe dla
-libvserver.
+Ten pakiet zawiera pliki nag³ówkowe dla biblioteki libvserver.
 
 %package static
 Summary:	Static libvserver library
