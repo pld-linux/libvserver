@@ -1,12 +1,13 @@
+%define		_pre	pre20051119
 Summary:	Linux-VServer syscall library
 Summary(pl):	Biblioteka wywo³añ systemowych Linux-VServer
 Name:		libvserver
-Version:	0.2.1
-Release:	0.1
+Version:	1.0
+Release:	0.%{_pre}.0.1
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://dev.gentoo.org/~hollow/vserver/libvserver/%{name}-%{version}.tar.bz2
-# Source0-md5:	61cb0a655e40116e1b4eba917018cdce
+Source0:	http://dev.gentoo.org/~hollow/vserver/libvserver/%{name}-%{version}_%{_pre}.tar.bz2
+# Source0-md5:	26a9f54e058abaad939f0a90f99314cf
 URL:		http://dev.gentoo.org/~hollow/vserver/libvserver/
 Conflicts:	util-vserver
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,6 +37,7 @@ Summary(pl):	Pliki nag³ówkowe biblioteki libvserver
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	linux-libc-headers
+Conflicts:	util-vserver-devel < 1.0
 
 %description devel
 This is the package containing the header files for libvserver.
@@ -48,6 +50,7 @@ Summary:	Static libvserver library
 Summary(pl):	Biblioteka statyczna libvserver
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+Conflicts:	util-vserver-static < 1.0
 
 %description static
 Static libvserver library.
@@ -56,7 +59,7 @@ Static libvserver library.
 Biblioteka statyczna libvserver.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}_%{_pre}
 
 %build
 %configure
@@ -78,15 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_libdir}/libvserver.so.*.*.*
-%attr(755,root,root) %{_sbindir}/vcontext
-%attr(755,root,root) %{_sbindir}/vdlimit
-%attr(755,root,root) %{_sbindir}/vinfo
-%attr(755,root,root) %{_sbindir}/vlimit
-%attr(755,root,root) %{_sbindir}/vnamespace
-%attr(755,root,root) %{_sbindir}/vnetwork
-%attr(755,root,root) %{_sbindir}/vsched
-%attr(755,root,root) %{_sbindir}/vsignal
-%attr(755,root,root) %{_sbindir}/vuname
 
 %files devel
 %defattr(644,root,root,755)
