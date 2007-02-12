@@ -1,6 +1,6 @@
 %define		_pre	pre20051119
 Summary:	Linux-VServer syscall library
-Summary(pl):	Biblioteka wywo³añ systemowych Linux-VServer
+Summary(pl.UTF-8):   Biblioteka wywoÅ‚aÅ„ systemowych Linux-VServer
 Name:		libvserver
 Version:	1.0
 Release:	0.%{_pre}.0.1
@@ -21,19 +21,19 @@ of the syscall commands in user space. High-level programs such as the
 "vserver" command of util-vserver can use these tools to access the
 VServer API.
 
-%description -l pl
-Pakiet zawiera czyst± implementacjê API Linux-VServera przy u¿yciu
-biblioteki, która obs³uguje wszystkie wywo³ania systemowe vservera
-oraz dostarcza interfejs dla innych aplikacji takich jak narzêdzia
-dostarczane z libvserver. Katalog narzêdzi zawiera najprostsz±
-implementacjê poleceñ obs³ugi wywo³añ systemowych w przestrzeni
-u¿ytkownika. Wysokopoziomowe programy, takie jak polecenie "vserver"
-z pakietu util-vserver, mog± u¿ywaæ tych narzêdzi do dostêpu do API
+%description -l pl.UTF-8
+Pakiet zawiera czystÄ… implementacjÄ™ API Linux-VServera przy uÅ¼yciu
+biblioteki, ktÃ³ra obsÅ‚uguje wszystkie wywoÅ‚ania systemowe vservera
+oraz dostarcza interfejs dla innych aplikacji takich jak narzÄ™dzia
+dostarczane z libvserver. Katalog narzÄ™dzi zawiera najprostszÄ…
+implementacjÄ™ poleceÅ„ obsÅ‚ugi wywoÅ‚aÅ„ systemowych w przestrzeni
+uÅ¼ytkownika. Wysokopoziomowe programy, takie jak polecenie "vserver"
+z pakietu util-vserver, mogÄ… uÅ¼ywaÄ‡ tych narzÄ™dzi do dostÄ™pu do API
 VServera.
 
 %package devel
 Summary:	Header files for libvserver library
-Summary(pl):	Pliki nag³ówkowe biblioteki libvserver
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libvserver
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	linux-libc-headers
@@ -42,12 +42,12 @@ Conflicts:	util-vserver-devel < 1.0
 %description devel
 This is the package containing the header files for libvserver.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe dla biblioteki libvserver.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe dla biblioteki libvserver.
 
 %package static
 Summary:	Static libvserver library
-Summary(pl):	Biblioteka statyczna libvserver
+Summary(pl.UTF-8):   Biblioteka statyczna libvserver
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Conflicts:	util-vserver-static < 1.0
@@ -55,7 +55,7 @@ Conflicts:	util-vserver-static < 1.0
 %description static
 Static libvserver library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libvserver.
 
 %prep
