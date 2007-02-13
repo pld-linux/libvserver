@@ -1,6 +1,6 @@
 %define		_pre	pre20051119
 Summary:	Linux-VServer syscall library
-Summary(pl.UTF-8):   Biblioteka wywołań systemowych Linux-VServer
+Summary(pl.UTF-8):	Biblioteka wywołań systemowych Linux-VServer
 Name:		libvserver
 Version:	1.0
 Release:	0.%{_pre}.0.1
@@ -33,7 +33,7 @@ VServera.
 
 %package devel
 Summary:	Header files for libvserver library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libvserver
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libvserver
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	linux-libc-headers
@@ -47,7 +47,7 @@ Ten pakiet zawiera pliki nagłówkowe dla biblioteki libvserver.
 
 %package static
 Summary:	Static libvserver library
-Summary(pl.UTF-8):   Biblioteka statyczna libvserver
+Summary(pl.UTF-8):	Biblioteka statyczna libvserver
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Conflicts:	util-vserver-static < 1.0
