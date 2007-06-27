@@ -1,14 +1,13 @@
-%define		_pre	pre20051119
 Summary:	Linux-VServer syscall library
 Summary(pl.UTF-8):	Biblioteka wywołań systemowych Linux-VServer
 Name:		libvserver
-Version:	1.0
-Release:	0.%{_pre}.0.1
+Version:	1.0.2
+Release:	1
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://dev.gentoo.org/~hollow/vserver/libvserver/%{name}-%{version}_%{_pre}.tar.bz2
-# Source0-md5:	26a9f54e058abaad939f0a90f99314cf
-URL:		http://dev.gentoo.org/~hollow/vserver/libvserver/
+Source0:	http://dev.gentoo.org/~hollow/libvserver/%{name}-%{version}.tar.bz2
+# Source0-md5:	c88584aba69908c860e708a3d5af9e8b
+URL:		http://dev.gentoo.org/~hollow/libvserver/
 Conflicts:	util-vserver
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,10 +58,16 @@ Static libvserver library.
 Biblioteka statyczna libvserver.
 
 %prep
-%setup -q -n %{name}-%{version}_%{_pre}
+%setup -q
 
 %build
-%configure
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
+CPPFLAGS="-D__KERNEL_STRICT_NAMES=1" 
+%configure \
+	--disable-dietlibc
 %{__make}
 
 %install
